@@ -35,3 +35,13 @@ app.get('/api/data', (req, res) => {
 app.listen(PORT, () => {
   logger.info(`Servidor listo en http://localhost:${PORT}`);
 });
+
+import express from 'express';
+const app = express();
+
+// Habilita CORS para GitHub Pages
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://tunombre.github.io'); // Reemplaza con tu URL
+  res.header('Access-Control-Allow-Methods', 'GET,POST');
+  next();
+});
