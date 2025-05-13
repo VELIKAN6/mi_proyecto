@@ -1,0 +1,23 @@
+{
+  "name": "mi_proyecto",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "live-server public --port=5173 --browser=chrome --watch=public",
+    "dev:backend": "nodemon src/server/server.js --ext js,mjs",
+    "build": "node scripts/build.js",
+    "start": "node src/server/server.js",
+    "serve": "npm run build && npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.3",
+    "esbuild": "^0.19.2"
+  }
+}
